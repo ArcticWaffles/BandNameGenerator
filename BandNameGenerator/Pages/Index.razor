@@ -3,17 +3,21 @@
 <h1>Band Name Generator</h1>
 
 <label for="genres">Choose a genre:</label>
-<br />
-<select name="genres" id="genres">
-    @foreach (var genre in (Genre[])Enum.GetValues(typeof(Genre)))
-    {
-        <option id=@genre>@genre</option>
-    }
-</select>
+
 <div>
-    <button class="margin-top-bottom-medium" @onclick="GenerateBandName">Generate Band Name</button>
+    <select name="genres" id="genres" @bind=SelectedGenre>
+        @foreach (var genre in Enum.GetNames(typeof(Genre)))
+        {
+            <option id=@genre>@genre</option>
+        }
+    </select>
 </div>
-<div>@bandName</div>
+
+<div>
+    <button class="btn btn-primary" @onclick="GenerateBandName">Generate Band Name</button>
+</div>
+
+<div class="margin-top-large">@bandName</div>
 
 
 @code {
@@ -27,6 +31,19 @@
     private string bandName;
 
     private Genre selectedGenre { get; set; } = Genre.Metal;
+
+    private Genre SelectedGenre
+    {
+        get
+        {
+            return selectedGenre;
+        }
+        set
+        {
+            selectedGenre = value;
+            bandName = "";
+        }
+    }
 
     private void GenerateBandName()
     {

@@ -125,6 +125,10 @@ app {
     margin: 8px 0px
 }
 
+.margin-top-large {
+    margin: 12px 0px
+}
+
 #blazor-error-ui {
     background: lightyellow;
     bottom: 0;
