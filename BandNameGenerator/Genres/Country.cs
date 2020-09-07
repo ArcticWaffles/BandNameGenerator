@@ -15,5 +15,8 @@ namespace BandNameGenerator.Genres
 
         private readonly List<string> adjectives = new List<string>() { "da" };
         public List<string> Adjectives => adjectives;
+
+        private readonly List<string> verbs = new List<string>() { "da" };
+        public List<string> Verbs => verbs;
     }
 }

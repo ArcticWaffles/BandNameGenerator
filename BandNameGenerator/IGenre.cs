@@ -7,8 +7,9 @@ namespace BandNameGenerator
 {
     public interface IGenre
     {
-         List<string> SingularNouns { get; }
-         List<string> PluralNouns { get; }
-         List<string> Adjectives { get; }
+        List<string> SingularNouns { get; }
+        List<string> PluralNouns { get; }
+        List<string> Adjectives { get; }
+        List<string> Verbs { get; }
     }
 }
