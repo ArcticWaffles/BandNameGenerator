@@ -6,8 +6,8 @@
 <label for="genres">Choose a genre:</label>
 
 <div class="margin-top-large">
-    <select name="genres" id="genres" @bind=SelectedGenre>
-        @foreach (var genre in Enum.GetNames(typeof(Genre)))
+    <select name="genres" id="genres" @bind=viewModel.SelectedGenre>
+        @foreach (var genre in Enum.GetNames(typeof(ViewModel.Genre)))
         {
             <option id=@genre>@genre</option>
         }
@@ -18,52 +18,19 @@
     <button class="btn btn-primary" @onclick=GenerateBandName>Generate Band Name</button>
 </div>
 
-<div class="margin-top-large">@bandName</div>
+<div class="margin-top-large">@viewModel.BandName</div>
 
 
 @code {
-    private enum Genre
+    public Generator()
     {
-        Metal,
-        Country,
-        Folk
+        viewModel = new ViewModel();
     }
 
-    private string bandName;
-
-    private Genre selectedGenre { get; set; } = Genre.Metal;
-
-    private Genre SelectedGenre
-    {
-        get
-        {
-            return selectedGenre;
-        }
-        set
-        {
-            selectedGenre = value;
-            bandName = "";
-        }
-    }
+    private ViewModel viewModel;
 
     private void GenerateBandName()
     {
-        var generator = new NameGenerator(convertToIGenre(selectedGenre));
-        bandName = generator.GenerateName();
-    }
-
-    private IGenre convertToIGenre(Genre genre)
-    {
-        switch (genre)
-        {
-            case Genre.Metal:
-                return new Metal();
-            case Genre.Country:
-                return new Country();
-            case Genre.Folk:
-                return new Folk();
-            default:
-                return new Metal();
-        }
+        viewModel.GenerateName();
     }
 }
