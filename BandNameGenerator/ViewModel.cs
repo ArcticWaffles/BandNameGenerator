@@ -8,24 +8,17 @@ namespace BandNameGenerator
 {
     public class ViewModel
     {
-        public enum Genre
+        public enum GenreID
         {
             Metal,
             Country,
             Folk
         }
 
-        public ViewModel()
+        private GenreID selectedGenre = GenreID.Metal;
+        public GenreID SelectedGenre
         {
-        }
-
-        private Genre selectedGenre = Genre.Metal;
-        public Genre SelectedGenre
-        {
-            get
-            {
-                return selectedGenre;
-            }
+            get => selectedGenre;
             set
             {
                 selectedGenre = value;
@@ -40,13 +33,13 @@ namespace BandNameGenerator
             BandName = "Best band name evah";
         }
 
-        private IGenre convertToIGenre(Genre genre)
+        private IGenre GetNewGenre(GenreID genre)
         {
             return genre switch
             {
-                Genre.Metal => new Metal(),
-                Genre.Country => new Country(),
-                Genre.Folk => new Folk(),
+                GenreID.Metal => new Metal(),
+                GenreID.Country => new Country(),
+                GenreID.Folk => new Folk(),
                 _ => new Metal(),
             };
         }

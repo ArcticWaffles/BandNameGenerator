@@ -7,7 +7,7 @@
 
 <div class="margin-top-large">
     <select name="genres" id="genres" @bind=viewModel.SelectedGenre>
-        @foreach (var genre in Enum.GetNames(typeof(ViewModel.Genre)))
+        @foreach (var genre in Enum.GetNames(typeof(ViewModel.GenreID)))
         {
             <option id=@genre>@genre</option>
         }

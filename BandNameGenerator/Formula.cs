@@ -33,12 +33,12 @@ namespace BandNameGenerator
                 from part in parts
                 select part switch
                 {
-                    Part.SingularNoun => GetStringFromCollection(genre.SingularNouns),
-                    Part.PluralNoun => GetStringFromCollection(genre.PluralNouns),
-                    Part.Adjective => GetStringFromCollection(genre.Adjectives),
-                    Part.SingularNounPossessive => GetStringFromCollection(genre.SingularNouns) + "'s",
-                    Part.Number => GetStringFromCollection(numbers),
-                    Part.Verb => GetStringFromCollection(genre.Verbs),
+                    Part.SingularNoun => PickWord(genre.SingularNouns),
+                    Part.PluralNoun => PickWord(genre.PluralNouns),
+                    Part.Adjective => PickWord(genre.Adjectives),
+                    Part.SingularNounPossessive => PickWord(genre.SingularNouns) + "'s",
+                    Part.Number => PickWord(numbers),
+                    Part.Verb => PickWord(genre.Verbs),
                     Part.InitialThe => "The",
                     Part.OfThe => "of the",
                     _ => "",
@@ -47,7 +47,7 @@ namespace BandNameGenerator
         }
         //TODO: Unit tests?
 
-        private string GetStringFromCollection(List<string> collection)
+        private string PickWord(List<string> words)
         {
             throw new NotImplementedException();
         }
