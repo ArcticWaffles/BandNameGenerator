@@ -13,14 +13,21 @@ namespace BandNameGenerator
             Adjective,
             SingularNounPossessive,
             Number,
-            Verb,
-            InitialThe,
-            OfThe
+            ThirdPersonSingularVerb,
+            ThirdPersonPluralVerb,
+            TransitiveVerb,
+            Frequency,
+            The,
+            OfThe,
+            MeA,
+            Dont
         }
 
         private readonly List<Part> parts;
 
         private readonly static List<string> numbers = new List<string>() { "3", "12", "100", "500", "A Thousand" };
+
+        private readonly static List<string> frequencies = new List<string>() { "Always", "Never", "Seldom" };
 
         public Formula(List<Part> parts)
         {
@@ -38,9 +45,14 @@ namespace BandNameGenerator
                     Part.Adjective => PickWord(genre.Adjectives),
                     Part.SingularNounPossessive => PickWord(genre.SingularNouns) + "'s",
                     Part.Number => PickWord(numbers),
-                    Part.Verb => PickWord(genre.Verbs),
-                    Part.InitialThe => "The",
+                    Part.ThirdPersonSingularVerb => PickWord(genre.ThirdPersonSingularVerbs),
+                    Part.ThirdPersonPluralVerb => PickWord(genre.ThirdPersonPluralVerbs),
+                    Part.TransitiveVerb => PickWord(genre.TransitiveVerbs),
+                    Part.Frequency => PickWord(frequencies),
+                    Part.The => "The",
                     Part.OfThe => "of the",
+                    Part.MeA => "me a",
+                    Part.Dont => "Don't",
                     _ => "",
                 };
             return string.Join(' ', strings);
