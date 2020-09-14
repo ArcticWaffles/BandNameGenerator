@@ -10,6 +10,9 @@ namespace BandNameGenerator
         List<string> SingularNouns { get; }
         List<string> PluralNouns { get; }
         List<string> Adjectives { get; }
-        List<string> Verbs { get; }
+        List<string> ThirdPersonSingularVerbs { get; }
+        List<string> ThirdPersonPluralVerbs { get; }
+        List<string> TransitiveVerbs { get; }
+        List<Formula> Formulas { get; }
     }
 }

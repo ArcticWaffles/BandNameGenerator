@@ -1,22 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BandNameGenerator.Genres
 {
     public class Metal : IGenre
     {
-        private readonly  List<string> singularNouns = new List<string>() { "da" };
-        public  List<string> SingularNouns => singularNouns;
+        public List<string> SingularNouns { get; } = new List<string>() { "Nail" };
+        public List<string> PluralNouns { get; } = new List<string>() { "Nails" };
+        public List<string> Adjectives { get; } = new List<string>() { "Bloody" };
+        public List<string> ThirdPersonSingularVerbs { get; } = new List<string>() { "Screeches" };
+        public List<string> ThirdPersonPluralVerbs { get; } = new List<string>() { "Screech" };
+        public List<string> TransitiveVerbs { get; } = new List<string>();
 
-        private readonly  List<string> pluralNouns = new List<string>() { "da" };
-        public  List<string> PluralNouns => pluralNouns;
-
-        private readonly List<string> adjectives = new List<string>() { "da" };
-        public  List<string> Adjectives => adjectives;
-
-        private readonly List<string> verbs = new List<string>() { "da" };
-        public List<string> Verbs => verbs;
+        public List<Formula> Formulas { get; } = new List<Formula>() {
+            SharedFormulas.ThePluralNoun,
+            SharedFormulas.TheAdjectiveSingularNoun,
+            SharedFormulas.TheAdjectivePluralNoun,
+            SharedFormulas.AdjectiveSingularNoun,
+            SharedFormulas.AdjectivePluralNoun,
+            SharedFormulas.SingularNounPossessiveSingularNoun
+        };
     }
 }

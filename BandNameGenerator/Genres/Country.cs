@@ -1,22 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace BandNameGenerator.Genres
 {
     public class Country : IGenre
     {
-        private readonly List<string> singularNouns = new List<string>() { "da" };
-        public List<string> SingularNouns => singularNouns;
+        public List<string> SingularNouns { get; } = new List<string>() { "Boot" };
+        public List<string> PluralNouns { get; } = new List<string>() { "Boots" };
+        public List<string> Adjectives { get; } = new List<string>() { "Dusty" };
+        public List<string> ThirdPersonSingularVerbs { get; } = new List<string>() { "Sings" };
+        public List<string> ThirdPersonPluralVerbs { get; } = new List<string>() { "Sing" };
+        public List<string> TransitiveVerbs { get; } = new List<string>() { "Sing" };
 
-        private readonly static List<string> pluralNouns = new List<string>() { "da" };
-        public List<string> PluralNouns => pluralNouns;
-
-        private readonly List<string> adjectives = new List<string>() { "da" };
-        public List<string> Adjectives => adjectives;
-
-        private readonly List<string> verbs = new List<string>() { "da" };
-        public List<string> Verbs => verbs;
+        public List<Formula> Formulas { get; } = new List<Formula>() {
+            SharedFormulas.ThePluralNoun,
+            SharedFormulas.TransitiveVerbMeASingularNoun,
+            SharedFormulas.TheAdjectiveSingularNoun,
+            SharedFormulas.TheAdjectivePluralNoun,
+            SharedFormulas.AdjectiveSingularNoun,
+            SharedFormulas.AdjectivePluralNoun,
+            SharedFormulas.SingularNounPossessiveSingularNoun,
+            SharedFormulas.TheSingularNounFrequencyVerb,
+            SharedFormulas.PluralNounDontVerb,
+            SharedFormulas.AdjectivePluralNounDontVerb
+        };
     }
 }
