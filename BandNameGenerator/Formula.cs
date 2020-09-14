@@ -23,13 +23,13 @@ namespace BandNameGenerator
             Dont
         }
 
-        private readonly List<Part> parts;
+        private readonly Part[] parts;
 
         private readonly static List<string> numbers = new List<string>() { "3", "12", "100", "500", "A Thousand" };
 
         private readonly static List<string> frequencies = new List<string>() { "Always", "Never", "Seldom" };
 
-        public Formula(List<Part> parts)
+        public Formula(params Part[] parts)
         {
             this.parts = parts;
         }

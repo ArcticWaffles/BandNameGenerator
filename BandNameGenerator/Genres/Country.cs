@@ -4,25 +4,14 @@ namespace BandNameGenerator.Genres
 {
     public class Country : IGenre
     {
-        private readonly List<string> singularNouns = new List<string>() { "Boot" };
-        public List<string> SingularNouns => singularNouns;
+        public List<string> SingularNouns { get; } = new List<string>() { "Boot" };
+        public List<string> PluralNouns { get; } = new List<string>() { "Boots" };
+        public List<string> Adjectives { get; } = new List<string>() { "Dusty" };
+        public List<string> ThirdPersonSingularVerbs { get; } = new List<string>() { "Sings" };
+        public List<string> ThirdPersonPluralVerbs { get; } = new List<string>() { "Sing" };
+        public List<string> TransitiveVerbs { get; } = new List<string>() { "Sing" };
 
-        private readonly static List<string> pluralNouns = new List<string>() { "Boots" };
-        public List<string> PluralNouns => pluralNouns;
-
-        private readonly List<string> adjectives = new List<string>() { "Dusty" };
-        public List<string> Adjectives => adjectives;
-
-        private readonly List<string> thirdPersonSingularVerbs = new List<string>() { "Sings" };
-        public List<string> ThirdPersonSingularVerbs => thirdPersonSingularVerbs;
-
-        private readonly List<string> thirdPersonPluralVerbs = new List<string>() { "Sing" };
-        public List<string> ThirdPersonPluralVerbs => thirdPersonPluralVerbs;
-
-        private readonly List<string> transitiveVerbs = new List<string>() { "Sing" };
-        public List<string> TransitiveVerbs => transitiveVerbs;
-
-        private readonly List<Formula> formulas = new List<Formula>() {
+        public List<Formula> Formulas { get; } = new List<Formula>() {
             SharedFormulas.ThePluralNoun,
             SharedFormulas.TransitiveVerbMeASingularNoun,
             SharedFormulas.TheAdjectiveSingularNoun,
@@ -34,6 +23,5 @@ namespace BandNameGenerator.Genres
             SharedFormulas.PluralNounDontVerb,
             SharedFormulas.AdjectivePluralNounDontVerb
         };
-        public List<Formula> Formulas => formulas;
     }
 }

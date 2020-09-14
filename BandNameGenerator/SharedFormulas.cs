@@ -7,77 +7,56 @@ namespace BandNameGenerator
 {
     public static class SharedFormulas
     {
-        private static readonly Formula numberPluralNoun = new Formula(new List<Formula.Part>(){
+        public static Formula NumberPluralNoun { get; } = new Formula(
             Formula.Part.Number,
-            Formula.Part.PluralNoun });
-        public static Formula NumberPluralNoun => numberPluralNoun;
+            Formula.Part.PluralNoun);
 
-
-        private static readonly Formula thePluralNoun = new Formula(new List<Formula.Part>(){
+        public static Formula ThePluralNoun { get; } = new Formula(
             Formula.Part.The,
-            Formula.Part.PluralNoun });
-        public static Formula ThePluralNoun => thePluralNoun;
+            Formula.Part.PluralNoun);
 
-
-        private static readonly Formula transitiveVerbMeASingularNoun = new Formula(new List<Formula.Part>(){
+        public static Formula TransitiveVerbMeASingularNoun { get; } = new Formula(
             Formula.Part.TransitiveVerb,
             Formula.Part.MeA,
-            Formula.Part.SingularNoun });
-        public static Formula TransitiveVerbMeASingularNoun => transitiveVerbMeASingularNoun;
+            Formula.Part.SingularNoun);
 
-
-        private static readonly Formula theAdjectiveSingularNoun = new Formula(new List<Formula.Part>(){
+        public static Formula TheAdjectiveSingularNoun { get; } = new Formula(
             Formula.Part.The,
             Formula.Part.Adjective,
-            Formula.Part.SingularNoun });
-        public static Formula TheAdjectiveSingularNoun => theAdjectiveSingularNoun;
+            Formula.Part.SingularNoun);
 
-
-        private static readonly Formula theAdjectivePluralNoun = new Formula(new List<Formula.Part>(){
+        public static Formula TheAdjectivePluralNoun { get; } = new Formula(
             Formula.Part.The,
             Formula.Part.Adjective,
-            Formula.Part.PluralNoun });
-        public static Formula TheAdjectivePluralNoun => theAdjectivePluralNoun;
+            Formula.Part.PluralNoun);
 
-
-        private static readonly Formula adjectiveSingularNoun = new Formula(new List<Formula.Part>(){
+        public static Formula AdjectiveSingularNoun { get; } = new Formula(
             Formula.Part.Adjective,
-            Formula.Part.SingularNoun });
-        public static Formula AdjectiveSingularNoun => adjectiveSingularNoun;
+            Formula.Part.SingularNoun);
 
-
-        private static readonly Formula adjectivePluralNoun = new Formula(new List<Formula.Part>(){
+        public static Formula AdjectivePluralNoun { get; } = new Formula(
             Formula.Part.Adjective,
-            Formula.Part.PluralNoun });
-        public static Formula AdjectivePluralNoun => adjectivePluralNoun;
+            Formula.Part.PluralNoun);
 
-
-        private static readonly Formula singularNounPossessiveSingularNoun = new Formula(new List<Formula.Part>(){
+        public static Formula SingularNounPossessiveSingularNoun { get; } = new Formula(
             Formula.Part.SingularNounPossessive,
-            Formula.Part.SingularNoun });
-        public static Formula SingularNounPossessiveSingularNoun => singularNounPossessiveSingularNoun;
+            Formula.Part.SingularNoun);
 
-
-        private static readonly Formula theSingularNounFrequencyVerb = new Formula(new List<Formula.Part>(){
+        public static Formula TheSingularNounFrequencyVerb { get; } = new Formula(
             Formula.Part.The,
             Formula.Part.SingularNoun,
             Formula.Part.Frequency,
-            Formula.Part.ThirdPersonSingularVerb});
-        public static Formula TheSingularNounFrequencyVerb => theSingularNounFrequencyVerb;
+            Formula.Part.ThirdPersonSingularVerb);
 
-
-        private static readonly Formula pluralNounDontVerb = new Formula(new List<Formula.Part>(){
+        public static Formula PluralNounDontVerb { get; } = new Formula(
             Formula.Part.PluralNoun,
             Formula.Part.Dont,
-            Formula.Part.ThirdPersonPluralVerb });
-        public static Formula PluralNounDontVerb => pluralNounDontVerb;
+            Formula.Part.ThirdPersonPluralVerb);
 
-
-        private static readonly Formula adjectivePluralNounDontVerb = new Formula(new List<Formula.Part>(){
+        public static Formula AdjectivePluralNounDontVerb { get; } = new Formula(
             Formula.Part.Adjective,
             Formula.Part.PluralNoun,
             Formula.Part.Dont,
-            Formula.Part.ThirdPersonPluralVerb });
-        public static Formula AdjectivePluralNounDontVerb => adjectivePluralNounDontVerb;
+            Formula.Part.ThirdPersonPluralVerb);
     }
 }
