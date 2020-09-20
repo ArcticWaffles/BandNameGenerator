@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BandNameGenerator.Genres;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -34,7 +35,7 @@ namespace BandNameGenerator
             this.parts = parts;
         }
 
-        public string GetValue(IGenre genre)
+        public string GetValue(Genre genre)
         {
             var strings =
                 from part in parts
@@ -61,7 +62,9 @@ namespace BandNameGenerator
 
         private string PickWord(List<string> words)
         {
-            throw new NotImplementedException();
+            if (!words.Any()) return "";
+            var randomIndex = new Random().Next(words.Count);
+            return words[randomIndex];
         }
     }
 }

@@ -3,22 +3,14 @@ using System.Collections.Generic;
 
 namespace BandNameGenerator.Genres
 {
-    public class Metal : IGenre
+    public class Metal : Genre
     {
-        public List<string> SingularNouns { get; } = new List<string>() { "Nail" };
-        public List<string> PluralNouns { get; } = new List<string>() { "Nails" };
-        public List<string> Adjectives { get; } = new List<string>() { "Bloody" };
-        public List<string> ThirdPersonSingularVerbs { get; } = new List<string>() { "Screeches" };
-        public List<string> ThirdPersonPluralVerbs { get; } = new List<string>() { "Screech" };
-        public List<string> TransitiveVerbs { get; } = new List<string>();
+        public override List<string> SingularNouns { get; } = new List<string>() { "Nail" };
+        public override List<string> PluralNouns { get; } = new List<string>() { "Nails" };
+        public override List<string> Adjectives { get; } = new List<string>() { "Bloody" };
+        public override List<string> ThirdPersonSingularVerbs { get; } = new List<string>() { "Screeches" };
+        public override List<string> ThirdPersonPluralVerbs { get; } = new List<string>() { "Screech" };
+        public override List<string> TransitiveVerbs { get; } = new List<string>();
 
-        public List<Formula> Formulas { get; } = new List<Formula>() {
-            SharedFormulas.ThePluralNoun,
-            SharedFormulas.TheAdjectiveSingularNoun,
-            SharedFormulas.TheAdjectivePluralNoun,
-            SharedFormulas.AdjectiveSingularNoun,
-            SharedFormulas.AdjectivePluralNoun,
-            SharedFormulas.SingularNounPossessiveSingularNoun
-        };
     }
 }

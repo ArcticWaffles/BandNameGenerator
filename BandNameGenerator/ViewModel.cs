@@ -30,10 +30,12 @@ namespace BandNameGenerator
 
         public void GenerateName()
         {
-            BandName = "Best band name evah";
+            var genre = GetNewGenre(selectedGenre);
+            var formula = genre.PickFormula();
+            BandName = formula.GetValue(genre);
         }
 
-        private IGenre GetNewGenre(GenreID genre)
+        private Genre GetNewGenre(GenreID genre)
         {
             return genre switch
             {

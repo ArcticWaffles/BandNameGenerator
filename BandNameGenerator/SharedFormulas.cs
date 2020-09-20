@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace BandNameGenerator
+﻿namespace BandNameGenerator
 {
     public static class SharedFormulas
     {
@@ -58,5 +53,10 @@ namespace BandNameGenerator
             Formula.Part.PluralNoun,
             Formula.Part.Dont,
             Formula.Part.ThirdPersonPluralVerb);
+
+        public static Formula NumberAdjectivePluralNoun { get; } = new Formula(
+            Formula.Part.Number,
+            Formula.Part.Adjective,
+            Formula.Part.PluralNoun);
     }
 }
