@@ -12,13 +12,14 @@ namespace BandNameGenerator.Genres
             ThirdPersonSingularVerbs = new[] { "Cries" };
             ThirdPersonPluralVerbs = new[] { "Cry" };
             TransitiveVerbs = new[] { "Cry" };
-            GenreSpecificFormulas = new List<Formula>
+
+            AddFormulas(new[]
             {
                 SharedFormulas.NumberPluralNoun,
                 SharedFormulas.TransitiveVerbMeASingularNoun,
                 SharedFormulas.TheSingularNounFrequencyVerb,
                 SharedFormulas.NumberAdjectivePluralNoun
-            };
+            });
         }
     }
 }

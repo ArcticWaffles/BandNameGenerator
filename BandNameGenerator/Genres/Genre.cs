@@ -20,8 +20,6 @@ namespace BandNameGenerator.Genres
                 SharedFormulas.AdjectivePluralNoun,
                 SharedFormulas.SingularNounPossessiveSingularNoun
             };
-
-            formulas.AddRange(GenreSpecificFormulas);
         }
 
         public string[] SingularNouns { get; protected set; } = new string[] { };
@@ -31,7 +29,8 @@ namespace BandNameGenerator.Genres
         public string[] ThirdPersonPluralVerbs { get; protected set; } = new string[] { };
         public string[] TransitiveVerbs { get; protected set; } = new string[] { };
 
-        protected List<Formula> GenreSpecificFormulas { get; set; } = new List<Formula>();
+        protected void AddFormulas(IEnumerable<Formula> newFormulas) 
+            => formulas.AddRange(newFormulas);
 
         public Formula PickFormula()
         {
