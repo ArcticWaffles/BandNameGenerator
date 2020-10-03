@@ -7,9 +7,11 @@ namespace BandNameGenerator.Genres
 {
     public abstract class Genre
     {
+        private readonly List<Formula> formulas;
+
         public Genre()
         {
-            Formulas = new List<Formula>
+            formulas = new List<Formula>
             {
                 SharedFormulas.ThePluralNoun,
                 SharedFormulas.TheAdjectiveSingularNoun,
@@ -19,24 +21,22 @@ namespace BandNameGenerator.Genres
                 SharedFormulas.SingularNounPossessiveSingularNoun
             };
 
-            Formulas.AddRange(GenreSpecificFormulas);
+            formulas.AddRange(GenreSpecificFormulas);
         }
 
-        public abstract List<string> SingularNouns { get; }
-        public abstract List<string> PluralNouns { get; }
-        public abstract List<string> Adjectives { get; }
-        public abstract List<string> ThirdPersonSingularVerbs { get; }
-        public abstract List<string> ThirdPersonPluralVerbs { get; }
-        public abstract List<string> TransitiveVerbs { get; }
+        public string[] SingularNouns { get; protected set; } = new string[] { };
+        public string[] PluralNouns { get; protected set; } = new string[] { };
+        public string[] Adjectives { get; protected set; } = new string[] { };
+        public string[] ThirdPersonSingularVerbs { get; protected set; } = new string[] { };
+        public string[] ThirdPersonPluralVerbs { get; protected set; } = new string[] { };
+        public string[] TransitiveVerbs { get; protected set; } = new string[] { };
 
-        protected virtual List<Formula> Formulas { get; }
-
-        protected virtual List<Formula> GenreSpecificFormulas { get; } = new List<Formula>();
+        protected List<Formula> GenreSpecificFormulas { get; set; } = new List<Formula>();
 
         public Formula PickFormula()
         {
-            var randomIndex = new Random().Next(Formulas.Count);
-            return Formulas[randomIndex];
+            var randomIndex = new Random().Next(formulas.Count);
+            return formulas[randomIndex];
         }
     }
 }

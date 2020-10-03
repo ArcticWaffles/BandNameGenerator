@@ -26,9 +26,9 @@ namespace BandNameGenerator
 
         private readonly Part[] parts;
 
-        private readonly static List<string> numbers = new List<string>() { "3", "12", "100", "500", "A Thousand" };
+        private readonly static string[] numbers = new[] { "3", "12", "100", "500", "A Thousand" };
 
-        private readonly static List<string> frequencies = new List<string>() { "Always", "Never", "Seldom" };
+        private readonly static string[] frequencies = new[] { "Always", "Never", "Seldom" };
 
         public Formula(params Part[] parts)
         {
@@ -60,11 +60,11 @@ namespace BandNameGenerator
         }
         //TODO: Unit tests?
 
-        private string PickWord(List<string> words)
+        private string PickWord(IEnumerable<string> words)
         {
             if (!words.Any()) return "";
-            var randomIndex = new Random().Next(words.Count);
-            return words[randomIndex];
+            var randomIndex = new Random().Next(words.Count());
+            return words.ElementAt(randomIndex);
         }
     }
 }
