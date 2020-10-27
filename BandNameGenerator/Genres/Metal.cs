@@ -1,17 +1,151 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace BandNameGenerator.Genres
+﻿namespace BandNameGenerator.Genres
 {
     public class Metal : Genre
     {
         public Metal()
         {
-            SingularNouns = new[] { "Nail" };
-            PluralNouns = new[] { "Nails" };
-            Adjectives = new[] { "Bloody" };
-            ThirdPersonSingularVerbs = new[] { "Screeches" };
-            ThirdPersonPluralVerbs = new[] { "Screech" };
+            SingularNouns = new[] 
+            {
+                "Angel",
+                "Battleaxe",
+                "Blade",
+                "Blood",
+                "Chain",
+                "Claw",
+                "Cobra",
+                "Crypt",
+                "Darkness",
+                "Death",
+                "Demon",
+                "Disturbance",
+                "Fang",
+                "Femur",
+                "Fire",
+                "Flame",
+                "Fool",
+                "Fury",
+                "Ghost",
+                "Gin",
+                "Grave",
+                "Grimace",
+                "Hall",
+                "Haunt",
+                "Leather",
+                "Lie",
+                "Machine",
+                "Nail",
+                "Python",
+                "Rage",
+                "Reptile",
+                "Scorpion",
+                "Silence",
+                "Skull",
+                "Slime",
+                "Snake",
+                "Stew",
+                "Tomb",
+                "Tooth",
+                "Viper",
+                "Whip",
+                "Wolverine",
+                "Worm",
+            };
+
+            PluralNouns = new[] 
+            {
+                "Angels",
+                "Battleaxes",
+                "Blades",
+                "Chains",
+                "Claws",
+                "Cobras",
+                "Crypts",
+                "Deaths",
+                "Demons",
+                "Disturbances",
+                "Fangs",
+                "Femurs",
+                "Fires",
+                "Flames",
+                "Fools",
+                "Furies",
+                "Ghosts",
+                "Graves",
+                "Grimaces",
+                "Halls",
+                "Haunt",
+                "Leather",
+                "Lies",
+                "Machine",
+                "Nails",
+                "Pythons",
+                "Rage",
+                "Reptiles",
+                "Scorpions",
+                "Silences",
+                "Skulls",
+                "Snakes",
+                "Teeth",
+                "Tombs",
+                "Vipers",
+                "Whips",
+                "Wolverines",
+                "Worms",
+            };
+
+            Adjectives = new[] 
+            {
+                "Bloody",
+                "Corrupt",
+                "Crushing",
+                "Enraged",
+                "Fiery",
+                "Furious",
+                "Gnashing",
+                "Hairy",
+                "Haunted",
+                "Haunting",
+                "Insane",
+                "Maladjusted",
+                "Malevolent",
+                "Malodorous",
+                "Maniacal",
+                "Oozing",
+                "Raging",
+                "Seething",
+                "Silent",
+                "Slimy",
+                "Slithering",
+                "Vindictive",
+            };
+
+            ThirdPersonSingularVerbs = new[] 
+            {
+                "Chains",
+                "Creeps",
+                "Crushes",
+                "Entombs",
+                "Gnashes",
+                "Rips",
+                "Slices",
+                "Slithers",
+                "Whips",
+                "Screeches",
+            };
+
+            ThirdPersonPluralVerbs = new[] 
+            {
+                "Chain",
+                "Creep",
+                "Crush",
+                "Entomb",
+                "Gnash",
+                "Rip",
+                "Slice",
+                "Slither",
+                "Whip",
+                "Screech",
+            };
         }
     }
 }
