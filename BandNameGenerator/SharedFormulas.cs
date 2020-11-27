@@ -58,5 +58,37 @@
             Formula.Part.Number,
             Formula.Part.Adjective,
             Formula.Part.PluralNoun);
+
+        public static Formula PrepositionTheSingularNoun { get; } = new Formula(
+            Formula.Part.Preposition,
+            Formula.Part.The,
+            Formula.Part.SingularNoun);
+
+        public static Formula PrepositionThePluralNoun { get; } = new Formula(
+            Formula.Part.Preposition,
+            Formula.Part.The,
+            Formula.Part.PluralNoun);
+
+        public static Formula PrepositionTheAdjectiveSingularNoun { get; } = new Formula(
+            Formula.Part.Preposition,
+            Formula.Part.The,
+            Formula.Part.Adjective,
+            Formula.Part.SingularNoun);
+
+        public static Formula PluralNounPrepositionTheSingularNoun { get; } = new Formula(
+            Formula.Part.PluralNoun,
+            Formula.Part.Preposition,
+            Formula.Part.The,
+            Formula.Part.SingularNoun);
+
+        public static Formula AdjectiveAdjectiveSingularNoun { get; } = new Formula(
+            Formula.Part.Adjective,
+            Formula.Part.Adjective,
+            Formula.Part.SingularNoun);
+
+        public static Formula PossessiveAdjectiveSingularNoun { get; } = new Formula(
+            Formula.Part.Possessive,
+            Formula.Part.Adjective,
+            Formula.Part.SingularNoun);
     }
 }

@@ -9,25 +9,61 @@ namespace BandNameGenerator
     {
         public enum Part
         {
-            SingularNoun,
-            PluralNoun,
             Adjective,
-            SingularNounPossessive,
-            Number,
-            ThirdPersonSingularVerb,
-            ThirdPersonPluralVerb,
-            TransitiveVerb,
+            Dont,
             Frequency,
-            The,
-            OfThe,
             MeA,
-            Dont
+            Number,
+            PluralNoun,
+            Possessive,
+            Preposition,
+            SingularNoun,
+            SingularNounPossessive,
+            The,
+            ThirdPersonPluralVerb,
+            ThirdPersonSingularVerb,
+            TransitiveVerb,
         }
 
         private readonly Part[] parts;
         private readonly Random random = new Random();
         private readonly static string[] numbers = new[] { "3", "12", "100", "500", "A Thousand" };
-        private readonly static string[] frequencies = new[] { "Always", "Never", "Seldom" };
+        private readonly static string[] frequencies = new[] { "Always", "Forever", "Never", "Seldom", "Sometimes" };
+
+        private readonly static string[] possessives = new[]
+        {
+            "My",
+            "His",
+            "Her",
+            "Our",
+            "Their",
+            "Your"
+        };
+
+        private readonly static string[] prepositions = new[]
+        {
+            "Above",
+            "Across",
+            "After",
+            "Against",
+            "Around",
+            "Before",
+            "Beyond",
+            "By",
+            "Despite",
+            "During",
+            "For",
+            "From",
+            "Near",
+            "Of",
+            "Over",
+            "Through",
+            "To",
+            "Toward",
+            "Under",
+            "Until",
+            "With",
+        };
 
         public Formula(params Part[] parts)
         {
@@ -40,19 +76,20 @@ namespace BandNameGenerator
                 from part in parts
                 select part switch
                 {
-                    Part.SingularNoun => PickWord(genre.SingularNouns),
-                    Part.PluralNoun => PickWord(genre.PluralNouns),
                     Part.Adjective => PickWord(genre.Adjectives),
-                    Part.SingularNounPossessive => PickWord(genre.SingularNouns) + "'s",
-                    Part.Number => PickWord(numbers),
-                    Part.ThirdPersonSingularVerb => PickWord(genre.ThirdPersonSingularVerbs),
-                    Part.ThirdPersonPluralVerb => PickWord(genre.ThirdPersonPluralVerbs),
-                    Part.TransitiveVerb => PickWord(genre.TransitiveVerbs),
-                    Part.Frequency => PickWord(frequencies),
-                    Part.The => "The",
-                    Part.OfThe => "of the",
-                    Part.MeA => "me a",
                     Part.Dont => "Don't",
+                    Part.Frequency => PickWord(frequencies),
+                    Part.MeA => "me a",
+                    Part.Number => PickWord(numbers),
+                    Part.PluralNoun => PickWord(genre.PluralNouns),
+                    Part.Possessive => PickWord(possessives),
+                    Part.Preposition => PickWord(prepositions),
+                    Part.SingularNoun => PickWord(genre.SingularNouns),
+                    Part.SingularNounPossessive => PickWord(genre.SingularNouns) + "'s",
+                    Part.The => "The",
+                    Part.ThirdPersonPluralVerb => PickWord(genre.ThirdPersonPluralVerbs),
+                    Part.ThirdPersonSingularVerb => PickWord(genre.ThirdPersonSingularVerbs),
+                    Part.TransitiveVerb => PickWord(genre.TransitiveVerbs),
                     _ => "",
                 };
             return string.Join(' ', strings);

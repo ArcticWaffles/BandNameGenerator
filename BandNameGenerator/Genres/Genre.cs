@@ -19,7 +19,13 @@ namespace BandNameGenerator.Genres
                 SharedFormulas.TheAdjectivePluralNoun,
                 SharedFormulas.AdjectiveSingularNoun,
                 SharedFormulas.AdjectivePluralNoun,
-                SharedFormulas.SingularNounPossessiveSingularNoun
+                SharedFormulas.SingularNounPossessiveSingularNoun,
+                SharedFormulas.PrepositionTheSingularNoun,
+                SharedFormulas.PrepositionThePluralNoun,
+                SharedFormulas.PrepositionTheAdjectiveSingularNoun,
+                SharedFormulas.PluralNounPrepositionTheSingularNoun,
+                SharedFormulas.AdjectiveAdjectiveSingularNoun,
+                SharedFormulas.PossessiveAdjectiveSingularNoun
             };
         }
 
@@ -30,7 +36,7 @@ namespace BandNameGenerator.Genres
         public string[] ThirdPersonPluralVerbs { get; protected set; } = new string[] { };
         public string[] TransitiveVerbs { get; protected set; } = new string[] { };
 
-        protected void AddFormulas(IEnumerable<Formula> newFormulas) 
+        protected void AddFormulas(IEnumerable<Formula> newFormulas)
             => formulas.AddRange(newFormulas);
 
         public Formula PickFormula()
