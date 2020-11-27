@@ -8,6 +8,7 @@ namespace BandNameGenerator.Genres
     public abstract class Genre
     {
         private readonly List<Formula> formulas;
+        private readonly Random random = new Random();
 
         public Genre()
         {
@@ -34,7 +35,7 @@ namespace BandNameGenerator.Genres
 
         public Formula PickFormula()
         {
-            var randomIndex = new Random().Next(formulas.Count);
+            var randomIndex = random.Next(formulas.Count);
             return formulas[randomIndex];
         }
     }

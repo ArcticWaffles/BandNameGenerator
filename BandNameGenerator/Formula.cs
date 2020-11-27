@@ -25,9 +25,8 @@ namespace BandNameGenerator
         }
 
         private readonly Part[] parts;
-
+        private readonly Random random = new Random();
         private readonly static string[] numbers = new[] { "3", "12", "100", "500", "A Thousand" };
-
         private readonly static string[] frequencies = new[] { "Always", "Never", "Seldom" };
 
         public Formula(params Part[] parts)
@@ -63,7 +62,7 @@ namespace BandNameGenerator
         private string PickWord(IEnumerable<string> words)
         {
             if (!words.Any()) return "";
-            var randomIndex = new Random().Next(words.Count());
+            var randomIndex = random.Next(words.Count());
             return words.ElementAt(randomIndex);
         }
     }
