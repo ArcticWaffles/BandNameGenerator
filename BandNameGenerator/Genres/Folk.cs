@@ -156,7 +156,7 @@ namespace BandNameGenerator.Genres
                 "Whisper",
             };
 
-            AddFormulas(new[]
+            formulas.AddRange(new[]
             {
                 SharedFormulas.NumberPluralNoun,
                 SharedFormulas.TransitiveVerbMeASingularNoun,

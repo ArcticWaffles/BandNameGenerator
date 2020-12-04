@@ -2,93 +2,111 @@
 {
     public static class SharedFormulas
     {
-        public static Formula NumberPluralNoun { get; } = new Formula(
+        public static Formula NumberPluralNoun { get; } = new Formula{
             Formula.Part.Number,
-            Formula.Part.PluralNoun);
+            Formula.Part.PluralNoun
+        };
 
-        public static Formula ThePluralNoun { get; } = new Formula(
+        public static Formula ThePluralNoun { get; } = new Formula{
             Formula.Part.The,
-            Formula.Part.PluralNoun);
+            Formula.Part.PluralNoun
+        };
 
-        public static Formula TransitiveVerbMeASingularNoun { get; } = new Formula(
+        public static Formula TransitiveVerbMeASingularNoun { get; } = new Formula{
             Formula.Part.TransitiveVerb,
             Formula.Part.MeA,
-            Formula.Part.SingularNoun);
+            Formula.Part.SingularNoun
+        };
 
-        public static Formula TheAdjectiveSingularNoun { get; } = new Formula(
+        public static Formula TheAdjectiveSingularNoun { get; } = new Formula{
             Formula.Part.The,
             Formula.Part.Adjective,
-            Formula.Part.SingularNoun);
+            Formula.Part.SingularNoun
+        };
 
-        public static Formula TheAdjectivePluralNoun { get; } = new Formula(
+        public static Formula TheAdjectivePluralNoun { get; } = new Formula{
             Formula.Part.The,
             Formula.Part.Adjective,
-            Formula.Part.PluralNoun);
+            Formula.Part.PluralNoun
+        };
 
-        public static Formula AdjectiveSingularNoun { get; } = new Formula(
+        public static Formula AdjectiveSingularNoun { get; } = new Formula{
             Formula.Part.Adjective,
-            Formula.Part.SingularNoun);
+            Formula.Part.SingularNoun
+        };
 
-        public static Formula AdjectivePluralNoun { get; } = new Formula(
+        public static Formula AdjectivePluralNoun { get; } = new Formula{
             Formula.Part.Adjective,
-            Formula.Part.PluralNoun);
+            Formula.Part.PluralNoun
+        };
 
-        public static Formula SingularNounPossessiveSingularNoun { get; } = new Formula(
+        public static Formula SingularNounPossessiveSingularNoun { get; } = new Formula{
             Formula.Part.SingularNounPossessive,
-            Formula.Part.SingularNoun);
+            Formula.Part.SingularNoun
+        };
 
-        public static Formula TheSingularNounFrequencyVerb { get; } = new Formula(
+        public static Formula TheSingularNounFrequencyVerb { get; } = new Formula{
             Formula.Part.The,
             Formula.Part.SingularNoun,
             Formula.Part.Frequency,
-            Formula.Part.ThirdPersonSingularVerb);
+            Formula.Part.ThirdPersonSingularVerb
+        };
 
-        public static Formula PluralNounDontVerb { get; } = new Formula(
+        public static Formula PluralNounDontVerb { get; } = new Formula{
             Formula.Part.PluralNoun,
             Formula.Part.Dont,
-            Formula.Part.ThirdPersonPluralVerb);
+            Formula.Part.ThirdPersonPluralVerb
+        };
 
-        public static Formula AdjectivePluralNounDontVerb { get; } = new Formula(
+        public static Formula AdjectivePluralNounDontVerb { get; } = new Formula{
             Formula.Part.Adjective,
             Formula.Part.PluralNoun,
             Formula.Part.Dont,
-            Formula.Part.ThirdPersonPluralVerb);
+            Formula.Part.ThirdPersonPluralVerb
+        };
 
-        public static Formula NumberAdjectivePluralNoun { get; } = new Formula(
+        public static Formula NumberAdjectivePluralNoun { get; } = new Formula{
             Formula.Part.Number,
             Formula.Part.Adjective,
-            Formula.Part.PluralNoun);
+            Formula.Part.PluralNoun
+        };
 
-        public static Formula PrepositionTheSingularNoun { get; } = new Formula(
+        public static Formula PrepositionTheSingularNoun { get; } = new Formula{
             Formula.Part.Preposition,
             Formula.Part.The,
-            Formula.Part.SingularNoun);
+            Formula.Part.SingularNoun
+        };
 
-        public static Formula PrepositionThePluralNoun { get; } = new Formula(
+        public static Formula PrepositionThePluralNoun { get; } = new Formula{
             Formula.Part.Preposition,
             Formula.Part.The,
-            Formula.Part.PluralNoun);
+            Formula.Part.PluralNoun
+        };
 
-        public static Formula PrepositionTheAdjectiveSingularNoun { get; } = new Formula(
+        public static Formula PrepositionTheAdjectiveSingularNoun { get; } = new Formula{
             Formula.Part.Preposition,
             Formula.Part.The,
             Formula.Part.Adjective,
-            Formula.Part.SingularNoun);
+            Formula.Part.SingularNoun
+        };
 
-        public static Formula PluralNounPrepositionTheSingularNoun { get; } = new Formula(
+        public static Formula PluralNounPrepositionTheSingularNoun { get; } = new Formula{
             Formula.Part.PluralNoun,
             Formula.Part.Preposition,
             Formula.Part.The,
-            Formula.Part.SingularNoun);
+            Formula.Part.SingularNoun
+        };
 
-        public static Formula AdjectiveAdjectiveSingularNoun { get; } = new Formula(
+        public static Formula AdjectiveAdjectiveSingularNoun { get; } = new Formula{
             Formula.Part.Adjective,
             Formula.Part.Adjective,
-            Formula.Part.SingularNoun);
+            Formula.Part.SingularNoun
+        };
 
-        public static Formula PossessiveAdjectiveSingularNoun { get; } = new Formula(
+        public static Formula PossessiveAdjectiveSingularNoun { get; } = new Formula{
             Formula.Part.Possessive,
             Formula.Part.Adjective,
-            Formula.Part.SingularNoun);
+            Formula.Part.SingularNoun
+        };
     }
 }

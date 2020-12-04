@@ -31,8 +31,7 @@ namespace BandNameGenerator
         public void GenerateName()
         {
             var genre = GetNewGenre(selectedGenre);
-            var formula = genre.PickFormula();
-            BandName = formula.GetValue(genre);
+            BandName = genre.GenerateName();
         }
 
         private Genre GetNewGenre(GenreID genre)

@@ -4,7 +4,7 @@
     {
         public Country()
         {
-            SingularNouns = new[] 
+            SingularNouns = new[]
             {
                 "Beer",
                 "Boot",
@@ -48,7 +48,7 @@
                 "Wind",
             };
 
-            PluralNouns = new[] 
+            PluralNouns = new[]
             {
                 "Boots",
                 "Bucks",
@@ -86,7 +86,7 @@
                 "Winds",
             };
 
-            Adjectives = new[] 
+            Adjectives = new[]
             {
                 "Desert",
                 "Deserted",
@@ -112,7 +112,7 @@
                 "Wondering",
             };
 
-            ThirdPersonSingularVerbs = new[] 
+            ThirdPersonSingularVerbs = new[]
             {
                 "Camps",
                 "Dances",
@@ -126,7 +126,7 @@
                 "Whistles",
             };
 
-            ThirdPersonPluralVerbs = new[] 
+            ThirdPersonPluralVerbs = new[]
             {
                 "Camp",
                 "Dance",
@@ -141,7 +141,7 @@
                 "Whistle",
             };
 
-            TransitiveVerbs = new[] 
+            TransitiveVerbs = new[]
             {
                 "Sing",
                 "Lasso",
@@ -149,7 +149,7 @@
                 "Give",
             };
 
-            AddFormulas(new[]
+            formulas.AddRange(new[]
             {
                 SharedFormulas.NumberPluralNoun,
                 SharedFormulas.TransitiveVerbMeASingularNoun,
